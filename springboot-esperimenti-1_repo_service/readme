@@ -1,0 +1,20 @@
+ https://gitlab.com/gianfranco.festi/crud_angular.git
+
+
+ comando per creare il jar 
+ >> gradle bootJar
+
+##java -jar build/libs/demo-0.0.1.jar --spring.config.location=build/libs/application.properties
+##àjava -jar app.jar --spring.config.location=file:///Users/home/config/jdbc.properties
+
+con application.properties standard
+java -jar build/libs/crud_libri-0.0.1.jar 
+
+con appliaction.properties esterna
+##java -jar build/libs/crud_libri-0.0.1.jar --spring.config.location=build/libs/application.properties
+
+eseguire 
+gradle wrapper
+
+per 
+./gradlew build --scan
