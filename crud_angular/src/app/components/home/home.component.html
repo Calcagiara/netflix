@@ -1,0 +1,106 @@
+<div id="home">
+    
+    <div style="display: flex; justify-content: center; gap: 1rem;">
+      <button mat-raised-button class="filter" (click)="filter(99)">Tutto</button>
+    <button mat-raised-button class="filter" (click)="filter(0)">Animazione</button>
+    <button mat-raised-button class="filter" (click)="filter(1)">Drammatico</button>
+    <button mat-raised-button class="filter" (click)="filter(2)">Thriller</button>
+    </div>
+  
+    <div id="category" class="Animazione">
+    <h1 class="fadeIn">ANIMAZIONE</h1>
+    <hr class="fadeIn">
+    <mat-grid-list cols="3" rowHeight="9:12">
+      <div *ngFor="let serie of shows$ | async">
+        <div *ngIf="serie.genere == generi[0]">
+          <mat-grid-tile>
+            <mat-card class="card">
+              <mat-card-header>
+              </mat-card-header>
+              <img mat-card-image src="{{serie.cover}}" style="height: 500px;">
+              <mat-card-content>
+                <h2>
+                  {{serie.titolo}}
+                </h2>
+                <p>
+                  {{serie.genere}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a routerLink="/serie/{{serie.link}}" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-raised-button class="play"><mat-icon>play_circle_outline</mat-icon></button></a>
+              </mat-card-actions>
+            </mat-card>
+          </mat-grid-tile>
+        </div>
+      </div>
+  
+    </mat-grid-list>
+    </div>
+  
+  
+  
+  
+  
+    <div id="category" class="Drammatico">
+      <h1 class="fadeIn">DRAMMATICO</h1>
+      <hr class="fadeIn">
+      <mat-grid-list cols="3" rowHeight="9:12">
+        <div *ngFor="let serie of shows$ | async">
+          <div *ngIf="serie.genere == generi[1]">
+            <mat-grid-tile>
+              <mat-card class="card">
+                <mat-card-header>
+                </mat-card-header>
+                <img mat-card-image src="{{serie.cover}}" style="height: 500px;">
+                <mat-card-content>
+                  <h2>
+                    {{serie.titolo}}
+                  </h2>
+                  <p>
+                    {{serie.genere}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <a routerLink="/serie/{{serie.link}}" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-raised-button class="play"><mat-icon>play_circle_outline</mat-icon></button></a>
+                </mat-card-actions>
+              </mat-card>
+            </mat-grid-tile>
+          </div>
+        </div>
+    
+      </mat-grid-list>
+      </div>
+  
+  
+      <div id="category" class="Thriller">
+        <h1 class="fadeIn">THRILLER</h1>
+        <hr class="fadeIn">
+        <mat-grid-list cols="3" rowHeight="9:12">
+          <div *ngFor="let serie of shows$ | async">
+            <div *ngIf="serie.genere == generi[2]">
+              <mat-grid-tile>
+                <mat-card class="card">
+                  <mat-card-header>
+                  </mat-card-header>
+                  <img mat-card-image src="{{serie.cover}}" style="height: 500px;">
+                  <mat-card-content>
+                    <h2>
+                      {{serie.titolo}}
+                    </h2>
+                    <p>
+                      {{serie.genere}}
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <a routerLink="/serie/{{serie.link}}" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-raised-button class="play"><mat-icon>play_circle_outline</mat-icon></button></a>
+                  </mat-card-actions>
+                </mat-card>
+              </mat-grid-tile>
+            </div>
+          </div>
+      
+        </mat-grid-list>
+        </div>
+      </div>
+  
+  

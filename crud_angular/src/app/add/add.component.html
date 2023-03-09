@@ -1,0 +1,33 @@
+<h2>Add serie</h2>
+<form [formGroup]="seriefrm" (ngSubmit)="onSubmit(seriefrm.value)">
+    <input type="input" id="id" placeholder="id" formControlName="id" hidden>
+    <div>Titolo:
+        <input type="input" id="titolo" placeholder="titolo" formControlName="titolo">
+
+        <div *ngIf="seriefrm.controls['titolo'].invalid && 
+            (seriefrm.controls['titolo'].dirty || seriefrm.controls['titolo'].touched)"
+                 class="alert">
+
+
+            <div *ngIf="seriefrm.controls['titolo'].errors?.['required']">
+                Name is required.
+            </div>
+            <div *ngIf="seriefrm.controls['titolo'].errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="seriefrm.controls['titolo'].errors?.['forbiddenName']">
+                Name cannot be Bob.
+            </div> 
+
+        </div>
+    </div>
+    <div>Cover:
+        <input type="input" id="cover" placeholder="cover" formControlName="cover">
+    </div>
+    <div>Prezzo:
+        <input type="input" id="genere" placeholder="genere" formControlName="genere">
+    </div>
+    <br>
+    <button type="submit" [disabled]="!seriefrm.valid">Salva</button>
+    <button (click)="annulla()">Annulla</button>
+</form>
